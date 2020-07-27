@@ -35,3 +35,21 @@ function getUrlVars() {
   });
   return vars;
 }
+
+function deleteAnzeige(id) {
+	fetch("https://www.ebay-kleinanzeigen.de/m-anzeigen-loeschen.json?ids=" + id, {
+		"headers": {
+			"accept": "*/*",
+			"accept-language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7,nl;q=0.6",
+			"sec-fetch-dest": "empty",
+			"sec-fetch-mode": "cors",
+			"sec-fetch-site": "same-origin",
+		},
+		"referrer": "https://www.ebay-kleinanzeigen.de/m-meine-anzeigen.html",
+		"referrerPolicy": "no-referrer-when-downgrade",
+		"body": null,
+		"method": "POST",
+		"mode": "cors",
+		"credentials": "include"
+	});
+}
