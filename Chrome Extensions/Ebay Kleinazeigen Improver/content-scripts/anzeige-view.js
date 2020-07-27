@@ -64,6 +64,6 @@ async function downloadImages() {
 }
 
 function storeImage(img,name) {
-   //forceDownload(img.src, name);
+   forceDownload(img.src, name);
    
 }
