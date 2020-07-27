@@ -1,0 +1,30 @@
+{
+  "name": "Ebay Kleinazeigen Improver",
+  "version": "0.1",
+  "description": "Fügt ein paar nützliche Funktionen zu Ebay Kleinazeigen hinzu!",
+  "icons": {"16": "icons/16.png", "32": "icons/32.png", "64":"icons/64.png", "128":"icons/128.png", "256":"icons/256.png"},
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+    "css": ["content-scripts/main.css"],
+    "js": ["content-scripts/main.js"],
+    "matches": ["*://*.ebay-kleinanzeigen.de/*"]
+	},
+	
+	{
+    "js": ["content-scripts/anzeigen-overview.js"],
+    "matches": ["*://*.ebay-kleinanzeigen.de/m-meine-anzeigen.html*"]
+	},
+	
+	{
+    "js": ["content-scripts/anzeige-create.js"],
+    "matches": ["*://*.ebay-kleinanzeigen.de/p-anzeige-aufgeben-schritt2.html*"]
+	},
+	
+	{
+    "js": ["content-scripts/anzeige-view.js"],
+    "matches": ["*://*.ebay-kleinanzeigen.de/s-anzeige/*"]
+	}
+  ],
+  "manifest_version": 2
+}
