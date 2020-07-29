@@ -1,0 +1,27 @@
+.custom-overview-section {
+	border-radius: 5px !important;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+
+.custom-overview-section * {
+	color: #56c700 !important;
+}
+
+.custom-overview-actionlist {
+	margin: 0 !important;
+	display: table-cell !important;
+}
+
+.custom-overview-actionlist li {
+	margin: 0 7px 0 3px !important;
+}
+
+.custom-view-recreate-button {
+	background-color: #6eff00 !important;
+}
+
+.manageaditem-actions, .savedsearchitem-actions, .followuseritem-actions {
+	display: block !important; 
+}

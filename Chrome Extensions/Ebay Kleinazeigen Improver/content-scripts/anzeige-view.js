@@ -1,4 +1,4 @@
-var button_raw_html = '<li id=""><a href="?custom_recreate" style="background-color: #6eff00;" id="viewad-action-recreate" class="button-secondary full-width taller"><i class="button-icon icon-redo-gray"></i><span>Anzeige Neuerstellen</span></a></li>'; 
+var button_raw_html = '<li><a href="?custom_recreate" id="viewad-action-recreate" class="button-secondary full-width taller custom-view-recreate-button"><i class="button-icon icon-redo-gray"></i><span>Anzeige Neuerstellen</span></a></li>'; 
 
 console.log("Ebay Kleinanzeigen Improver --> anzeige-view.js");
 
