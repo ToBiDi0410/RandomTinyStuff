@@ -12,18 +12,23 @@
 	},
 	
 	{
-    "js": ["content-scripts/anzeigen-overview.js"],
+    "js": ["content-scripts/anzeigen-übersicht.js"],
     "matches": ["*://*.ebay-kleinanzeigen.de/m-meine-anzeigen.html*"]
 	},
 	
 	{
-    "js": ["content-scripts/anzeige-create.js"],
+    "js": ["content-scripts/anzeige-erstellen.js"],
     "matches": ["*://*.ebay-kleinanzeigen.de/p-anzeige-aufgeben-schritt2.html*"]
 	},
 	
 	{
-    "js": ["content-scripts/anzeige-view.js"],
+    "js": ["content-scripts/anzeige-ansicht.js"],
     "matches": ["*://*.ebay-kleinanzeigen.de/s-anzeige/*"]
+	},
+	
+	{
+    "js": ["content-scripts/nachrichten.js"],
+    "matches": ["*://*.ebay-kleinanzeigen.de/m-nachrichten.html*"]
 	}
   ],
   "manifest_version": 2
