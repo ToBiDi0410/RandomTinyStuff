@@ -1,17 +1,20 @@
+console.log("[EKS] Seite --> Anzeigen Ansicht");
+custom_show_loading();
+
 var button_raw_html = '<li><a href="?custom_recreate" id="viewad-action-recreate" class="button-secondary full-width taller custom-view-recreate-button"><i class="button-icon icon-redo-gray"></i><span>Anzeige Neuerstellen</span></a></li>'; 
 
-console.log("Ebay Kleinanzeigen Improver --> anzeige-view.js");
+window.addEventListener("load", windowLoaded(), false);
 
-window.onload = windowLoaded();
-
-function windowLoaded() {
-	addRecreateButton();
-	checkURLParams();
+async function windowLoaded() {
+	await addRecreateButton();
+	await checkURLParams();
+	custom_hide_loading();
 }
 
-function addRecreateButton() {
+async function addRecreateButton() {
 	var buttons_element = document.getElementById("viewad-action-watchlist").parentElement;
 	buttons_element.innerHTML = button_raw_html + buttons_element.innerHTML;
+	return;
 }
 
 async function checkURLParams() {
@@ -23,6 +26,9 @@ async function checkURLParams() {
         } else {
             window.location.href = window.location.href.replace("custom_save", "");
         }
+		return;
+	} else {
+		return;
 	}
 }
 
@@ -57,13 +63,14 @@ async function downloadImages() {
     var curr_index = 0;
     while (curr_index < images.length - 1) {
         var imgObj = images[curr_index].getElementsByTagName("img")[0];
-        storeImage(imgObj, id + "_" + (curr_index + 1) + ".jpg");
+        await storeImage(imgObj, id + "_" + (curr_index + 1) + ".jpg");
         curr_index++;
-        await sleep(100);
     }
+	return;
 }
 
-function storeImage(img,name) {
+async function storeImage(img,name) {
    forceDownload(img.src, name);
-   
+   await sleep(100);
+   return;
 }

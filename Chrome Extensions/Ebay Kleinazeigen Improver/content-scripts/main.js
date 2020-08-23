@@ -1,10 +1,11 @@
+console.log("[EKS] Haupt-Engine geladen!");
+importScriptFromURL("https://unpkg.com/jspdf@latest/dist/jspdf.min.js");
+
 var title;
 var price;
 var description;
 var id;
 var url_vars = getUrlVars();
-
-console.log("Ebay Kleinanzeigen Improver --> main.js");
 
 
 function forceDownload(url, fileName){
@@ -52,4 +53,23 @@ function deleteAnzeige(id) {
 		"mode": "cors",
 		"credentials": "include"
 	});
+}
+
+function custom_show_loading() {
+	var loading_div = document.createElement("div"); loading_div.classList.add("loading"); loading_div.id = "custom-loading";
+	var ring_div = document.createElement("div"); ring_div.classList.add("uil-ring-css"); ring_div.style = 'transform:scale(0.79);';
+	var empty_div = document.createElement("div");
+	ring_div.appendChild(empty_div);
+	loading_div.appendChild(ring_div);
+	document.body.appendChild(loading_div);
+}
+
+function custom_hide_loading() {
+	var loading_div = document.getElementById("custom-loading");
+	loading_div.remove();
+}
+function importScriptFromURL(source) {
+	var script_elem = document.createElement("script");
+	script_elem.src = source;
+	document.body.appendChild(script_elem);
 }

@@ -1,14 +1,18 @@
-console.log("Ebay Kleinanzeigen Improver --> anzeigen-overview.js");
+console.log("[EKS] Seite --> Anzeigen Übersicht");
+custom_show_loading();
 
-window.onload = windowLoaded();
+window.addEventListener("load", windowLoaded(), false);
 
-function windowLoaded() {
-	setTimeout(function() {
-	    addRenewButtons();
+async function windowLoaded() {
+	setTimeout(async function() {
+	    await addRenewButtons();
+		custom_hide_loading();
 	},500);		
 }
 
-function addRenewButtons() {
+async function addRenewButtons() {
+  return new Promise(resolve => {
+  
   var ads = getAllAdsFromUser();
   var curr_index_ = 0;
   while(curr_index_ < ads.length) { 
@@ -21,6 +25,9 @@ function addRenewButtons() {
 	list.appendChild(createRenewListEntry(adurl));
 	curr_index_++;
   }
+  resolve("done");
+  
+  });
 }
 
 function createRenewListEntry(adurl) {

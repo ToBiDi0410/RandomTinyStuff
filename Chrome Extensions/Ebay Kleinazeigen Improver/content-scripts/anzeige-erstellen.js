@@ -1,35 +1,39 @@
+console.log("[EKS] Seite --> Anzeige erstellen");
+custom_show_loading();
+
 var custom_button_html = '<button style="background-color: #6eff00;" id="pstad-submit-custom" class="button custom-submit-delete-old" type="submit"><span>Anzeige aufgeben &amp; Alte Anzeige Löschen</span></button>';
 var auto_insert = false;
 
-console.log("Ebay Kleinanzeigen Improver --> anzeige-create.js");
+window.addEventListener("load", windowLoaded(), false);
 
-window.onload = windowLoaded();
-
-function windowLoaded() {
-	setTimeout(function() {
-	    checkURLParams();
-		addCustomSubmitButton();
+async function windowLoaded() {
+	setTimeout(async function() {
+	    await checkURLParams();
+		custom_hide_loading();
 	},500);		
 }
 
-function loadAllData(overgive_id) {
+async function loadAllData(overgive_id) {
   id = overgive_id;
   title = localStorage.getItem(id + "_title");
   price = localStorage.getItem(id + "_price");
   description = localStorage.getItem(id + "_desc");
+  return;
 }
 
-function checkURLParams() {
+async function checkURLParams() {
 	if(url_vars["auto_insert"] != null && url_vars["auto_insert"] != "" && url_vars["auto_insert"] != 1) {
         console.log("Automatically Inserting Infos...");
     	auto_insert = true;
 		id = url_vars["auto_insert"];
-        loadAllData(id);
-        insertData();
+        await loadAllData(id);
+        await insertData();
+		await addCustomSubmitButton();
     }
+	return;
 }
 
-function addCustomSubmitButton() {
+async function addCustomSubmitButton() {
 	if(auto_insert == true) {
 	    var default_submit_button = document.getElementById("pstad-submit");
        	default_submit_button.parentElement.innerHTML = custom_button_html + default_submit_button.parentElement.innerHTML;
@@ -37,9 +41,10 @@ function addCustomSubmitButton() {
             console.log("Should delete: " + id); 
         });		
 	}
+	return;
 }
 
-function insertData() {
+async function insertData() {
   document.getElementById("postad-title").value = title;
   document.getElementById("pstad-descrptn").value = description;
   if(isNaN(price)) {
@@ -55,6 +60,7 @@ function insertData() {
     setToFestpreis();
     document.getElementById("pstad-price").value = price;
   }
+  return;
 }
 
 function setToFestpreis()  { document.getElementById("priceType1").click(); }
