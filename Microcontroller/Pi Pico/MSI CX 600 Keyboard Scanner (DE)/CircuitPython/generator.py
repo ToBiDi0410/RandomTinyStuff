@@ -5,11 +5,11 @@ import time
 connector_pins = [board.GP0, board.GP1, board.GP2, board.GP3, board.GP4, board.GP5, board.GP6, board.GP7, board.GP8, board.GP9, board.GP10, board.GP11, board.GP12, board.GP13, board.GP14, board.GP15, board.GP16, board.GP17, board.GP18, board.GP19, board.GP20, board.GP21, board.GP22, board.GP26, board.GP27, board.GP28]
 
 KEYS = ["ESCAPE", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "PRINT_SCREEN", "SCROLL_LOCK", "PAUSE", "INSERT", "DELETE", "PAGE_UP", "PAGE_DOWN",
-        "?", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "ZERO", "?", "?", "BACKSPACE", "KEYPAD_NUMLOCK", "KEYPAD_FORWARD_SLASH", "KEYPAD_ASTERISK", "KEYPAD_MINUS",
-        "TAB", "Q", "W", "E", "R", "T", "Z", "U", "I", "O", "P", "Ü", "?", "?", "KEYPAD_SEVEN", "KEYPAD_EIGHT", "KEYPAD_NINE", "KEYPAD_PLUS",
-        "CAPS_LOCK", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö", "Ä", "ENTER", "KEYPAD_FOUR", "KEYPAD_FIVE", "KEYPAD_SIX",
+        "GRAVE_ACCENT", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "ZERO", "MINUS", "EQAULS", "BACKSPACE", "KEYPAD_NUMLOCK", "KEYPAD_FORWARD_SLASH", "KEYPAD_ASTERISK", "KEYPAD_MINUS",
+        "TAB", "Q", "W", "E", "R", "T", "Z", "U", "I", "O", "P", "LEFT_BRACKET", "RIGHT_BRACKET", "BACKSLASH", "KEYPAD_SEVEN", "KEYPAD_EIGHT", "KEYPAD_NINE", "KEYPAD_PLUS",
+        "CAPS_LOCK", "A", "S", "D", "F", "G", "H", "J", "K", "L", "SEMICOLON", "QUOTE", "ENTER", "KEYPAD_FOUR", "KEYPAD_FIVE", "KEYPAD_SIX",
         "LEFT_SHIFT", "Y", "X", "C", "V", "B", "N", "M", "COMMA", "PERIOD", "FORWARD_SLASH", "RIGHT_SHIFT", "UP_ARROW" "KEYPAD_ONE", "KEYPAD_TWO", "KEYPAD_THREE", "KEYPAD_ENTER",
-        "CONTROL", "APPLICATION", "LEFT_ALT", "?", "SPACEBAR", "RIGHT_ALT", "?", "RIGHT_CONTROL", "LEFT_ARROW", "DOWN_ARROW", "RIGHT_ARROW", "KEYPAD_ZERO", "KEYPAD_PERIOD"
+        "CONTROL", "GUI", "LEFT_ALT", "?", "SPACEBAR", "RIGHT_ALT", "APPLICATION", "RIGHT_CONTROL", "LEFT_ARROW", "DOWN_ARROW", "RIGHT_ARROW", "KEYPAD_ZERO", "KEYPAD_PERIOD"
 ]
 
 LAST_KEY = ""
