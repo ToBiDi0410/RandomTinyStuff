@@ -2,7 +2,7 @@ import maindriver as md
 import board
 import time
 
-connector_pins = [board.GP0, board.GP1, board.GP2, board.GP3, board.GP4, board.GP5, board.GP6, board.GP7, board.GP8, board.GP9, board.GP10, board.GP11, board.GP12, board.GP13, board.GP14, board.GP15, board.GP16, board.GP17, board.GP18, board.GP19, board.GP20, board.GP21, board.GP22, board.GP26, board.GP27, board.GP28];
+connector_pins = [board.GP0, board.GP1, board.GP2, board.GP3, board.GP4, board.GP5, board.GP6, board.GP7, board.GP8, board.GP9, board.GP10, board.GP11, board.GP12, board.GP13, board.GP14, board.GP15, board.GP16, board.GP17, board.GP18, board.GP19, board.GP20, board.GP21, board.GP22, board.GP26, board.GP27, board.GP28]
 
 KEYS = ["ESCAPE", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "PRINT_SCREEN", "SCROLL_LOCK", "PAUSE", "INSERT", "DELETE", "PAGE_UP", "PAGE_DOWN",
         "?", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "ZERO", "?", "?", "BACKSPACE", "KEYPAD_NUMLOCK", "KEYPAD_FORWARD_SLASH", "KEYPAD_ASTERISK", "KEYPAD_MINUS",
@@ -37,7 +37,7 @@ def setup():
         LAST_KEY = ""
         while LAST_KEY == "":
             md.loop()
-        INDEXED_KEYS[LAST_KEY] = ASK;
+        INDEXED_KEYS[LAST_KEY] = ASK
         KEYS.pop(0)
 
     print("------------ [!] ------------")
