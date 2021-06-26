@@ -4,10 +4,10 @@ Eine Repository für random Scripts/Projekte die einfach zu klein sind für eine
 
 Repository for stuff that is too random or tiny to publish in a single Repository. It´s mostly for Private use, but could assist somebody in specific cases.
 
-## Projekte
+## Projekte/Projects
 
-- Ebay Kleinanzeigen Improver ߔȠ(In Arbeit)
-- MSI CX 600 Keyboard Reverse Engineering
+- Ebay Kleinanzeigen Improver ߔȠ(Eingestellt/Discontinued)
+- MSI CX 600 Keyboard Reverse Engineering (Fast fertig/Nearly done)
 
 ## Copyright
 
