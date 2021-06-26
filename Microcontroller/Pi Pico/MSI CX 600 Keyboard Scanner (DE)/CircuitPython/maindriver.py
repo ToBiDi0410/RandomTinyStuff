@@ -1,5 +1,4 @@
 # MAIN DRIVER FOR PI KEYBOARD SCANNER
-import board
 import digitalio
 import time
 
@@ -22,7 +21,7 @@ def go_GROUND(pin):
     pin.value = False
 
 def is_GROUNDED(pin):
-    return (pin.value == False)
+    return (pin.value is False)
 
 def setup(newpins, event_callbacke):
     global event_callback
@@ -58,26 +57,26 @@ def getShortedPins():
     shortedPins = []
     pinslist = list(pins)
     i = 0
-    while i < len(pins): # Go through Pins
+    while i < len(pins):  # Go through Pins
         PIN1 = pins[pinslist[i]]
         go_GROUND(PIN1)
-        ii =  i + 1
+        ii = i + 1
 
         while ii < len(pins):
             if ii != i:
-                PIN2 = pins[pinslist[ii]];
+                PIN2 = pins[pinslist[ii]]
                 if (is_GROUNDED(PIN2)):
-                    combinations = [(list(pins)[i] + "|" + list(pins)[ii]),(list(pins)[ii] + "|" + list(pins)[i])]
-                    if(arrayContainsOneOf(combinations, shortedPins) == False):
+                    combinations = [(pinslist[i] + "|" + pinslist[ii]), (pinslist[ii] + "|" + pinslist[i])]
+                    if(arrayContainsOneOf(combinations, shortedPins) is False):
                         shortedPins.append(combinations[0])
-            ii+=1
+            ii += 1
 
         go_PULLUP(PIN1)
-        i+=1
+        i += 1
     return shortedPins
 
 def arrayContainsOneOf(checkarray, array):
     for val in array:
         if(val in checkarray):
-            return true
+            return True
     return False

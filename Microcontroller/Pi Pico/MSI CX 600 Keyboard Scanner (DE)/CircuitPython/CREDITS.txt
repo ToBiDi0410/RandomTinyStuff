@@ -1,0 +1,4 @@
+Some of these Files might include content from:
+- https://github.com/adafruit/Adafruit_CircuitPython_HID
+- https://github.com/thedalles77/USB_Laptop_Keyboard_Controller
+- https://github.com/adafruit/circuitpython
