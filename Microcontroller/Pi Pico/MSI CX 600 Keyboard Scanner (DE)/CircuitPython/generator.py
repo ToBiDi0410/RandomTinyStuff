@@ -9,7 +9,7 @@ KEYS = ["ESCAPE", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "
         "TAB", "Q", "W", "E", "R", "T", "Z", "U", "I", "O", "P", "LEFT_BRACKET", "RIGHT_BRACKET", "BACKSLASH", "KEYPAD_SEVEN", "KEYPAD_EIGHT", "KEYPAD_NINE", "KEYPAD_PLUS",
         "CAPS_LOCK", "A", "S", "D", "F", "G", "H", "J", "K", "L", "SEMICOLON", "QUOTE", "ENTER", "KEYPAD_FOUR", "KEYPAD_FIVE", "KEYPAD_SIX",
         "LEFT_SHIFT", "Y", "X", "C", "V", "B", "N", "M", "COMMA", "PERIOD", "FORWARD_SLASH", "RIGHT_SHIFT", "UP_ARROW" "KEYPAD_ONE", "KEYPAD_TWO", "KEYPAD_THREE", "KEYPAD_ENTER",
-        "CONTROL", "GUI", "LEFT_ALT", "?", "SPACEBAR", "RIGHT_ALT", "APPLICATION", "RIGHT_CONTROL", "LEFT_ARROW", "DOWN_ARROW", "RIGHT_ARROW", "KEYPAD_ZERO", "KEYPAD_PERIOD"
+        "CONTROL", "GUI", "LEFT_ALT", 0x64, "SPACEBAR", "RIGHT_ALT", "APPLICATION", "RIGHT_CONTROL", "LEFT_ARROW", "DOWN_ARROW", "RIGHT_ARROW", "KEYPAD_ZERO", "KEYPAD_PERIOD"
 ]
 
 LAST_KEY = ""
@@ -33,7 +33,7 @@ def setup():
 
     while len(KEYS) > 0:
         ASK = KEYS[0]
-        print("Please enter: " + ASK)
+        print("[WAIT] Please hit the following Key: " + ASK)
         LAST_KEY = ""
         while LAST_KEY == "":
             md.loop()

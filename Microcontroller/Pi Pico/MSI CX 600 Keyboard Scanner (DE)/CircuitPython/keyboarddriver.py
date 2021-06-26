@@ -2,6 +2,7 @@ import maindriver as md
 import time
 import board
 import usb_hid
+import sys
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keycode import Keycode
 
@@ -98,7 +99,7 @@ keycodes = {
     "board.GP4|board.GP11": "Y",
     "board.GP4|board.GP8": "GUI",
     "board.GP5|board.GP3": "LEFT_ALT",
-    "board.GP12|board.GP27_A1": "?",
+    "board.GP12|board.GP27_A1": 0x64,
     "board.GP5|board.GP14": "SPACEBAR",
     "board.GP6|board.GP3": "RIGHT_ALT",
     "board.GP18|board.GP6": "APPLICATION",
@@ -109,11 +110,11 @@ keycodes = {
     "board.GP7|board.GP13": "EIGHT",
     "board.GP7|board.GP11": "SEVEN",
     "board.GP7|board.GP10": "THREE",
-    "board.GP13|board.GP27_A1": "?",
+    "board.GP13|board.GP27_A1": "EQUALS",
     "board.GP11|board.GP27_A1": "SIX",
     "board.GP17|board.GP27_A1": "F9",
     "board.GP15|board.GP27_A1": "PAGE_UP",
-    "board.GP19|board.GP27_A1": "?",
+    "board.GP19|board.GP27_A1": "MINUS",
     "board.GP21|board.GP28_A2": "X",
     "board.GP20|board.GP28_A2": "V",
     "board.GP28_A2|board.GP9": "Z",
@@ -169,25 +170,33 @@ def eventCallback(name, pin):
             print("[WARN] Unidentified Keycodes: " + pin)
             return
 
-        if hasattr(Keycode, ikeycode) is False:
+        numkeycode = numericValueByKeycode(ikeycode)
+
+        if numkeycode == "":
             print("[WARN] Keycode not valid: " + ikeycode + "(" + pin + ")")
             return
 
         if name == "press":
-            keyboard.press(getattr(Keycode, ikeycode))
+            print(numkeycode)
+            keyboard.press(numkeycode)
             return
         elif name == "release":
-            keyboard.release(getattr(Keycode, ikeycode))
+            keyboard.release(numkeycode)
             return
         else:
             print("[WARN] Unidentified Event from Main-Driver: " + name)
-    except:
+    except Exception as err:
         print("[ERR] Could not Process Event: " + str(name) + "(" + str(pin) + ")")
+        raise err
 
+def numericValueByKeycode(ikeycode):
+    if(isinstance(ikeycode, str) is not True):
+        return ikeycode
+
+    return getattr(Keycode, ikeycode)
 
 def setup():
     md.setup(connector_pins, eventCallback)
-
 
 def loop():
     global now, keys_pressed
