@@ -2,6 +2,8 @@
 
 Eine Repository für random Scripts/Projekte die einfach zu klein sind für eine Normale Repository oder einfach nur zum Privaten nutzen erstellt wurden!
 
+Repository for stuff that is too random or tiny to publish in a single Repository. It´s mostly for Private use, but could assist somebody in specific cases.
+
 ## Projekte
 
 - Ebay Kleinanzeigen Improver ߔȠ(In Arbeit)
