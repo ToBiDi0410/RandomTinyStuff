@@ -7,7 +7,7 @@ async function getMusicOutputDevice() {
 }
 
 async function getDefaultOutputDevice() {
-    return (await getMediaDevices()).find(a => a.label.toLowerCase().includes("default") && a.kind == "audiooutput");
+    return (await getMediaDevices()).find(a => a.deviceId.toLowerCase().includes("default") && a.kind == "audiooutput");
 }
 
 async function updateAllSinks(device) {
