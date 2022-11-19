@@ -29,6 +29,6 @@ function changeMuted(v) {
     audios.forEach(a => a.muted = v);
 }
 
-function resetAllSinks() {
-
+async function resetAllSinks() {
+    await updateAllSinks(await getDefaultOutputDevice());
 }
